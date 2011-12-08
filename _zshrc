@@ -1,0 +1,57 @@
+# Path to your oh-my-zsh configuration.
+ZSH=/home/matt/conf/capek/oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="robbyrussell"
+
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
+
+# Comment this out to disable weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git, brew, pip, osx)
+
+source $ZSH/oh-my-zsh.sh
+
+# Customize to your needs...
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin
+
+export MEDUELE_SETTINGS=/Users/redwoodsystems/conf/meduele_settings.py
+export SARVAJAL_SETTINGS=/home/matt/conf/sarvajal/sarvajal_settings.py
+
+#{ ALIASES
+alias ll='ls -la'
+alias l='ls -lh'
+alias gs='git status'
+alias gh='git history'
+alias ga='git add'
+alias gb='git branch'
+alias gd='git diff'
+
+#{ Clementine music player 
+# http://code.google.com/p/clementine-player/wiki/MPRIS
+alias play='qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.Play'
+alias pause='qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.Pause'
+alias next='qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.Next'
+alias prev='qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.Prev'
+alias stop='qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.Stop'
+alias current='qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.GetMetadata'
+
+#}
+
+#}
