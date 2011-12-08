@@ -1,6 +1,6 @@
 [user]
-    name = John Anderson
-    email = sontek@gmail.com
+    name = Matt Ball
+    email = yosemitebandit@gmail.com
 
 [color]
     diff = auto
@@ -27,4 +27,5 @@
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls = ls-files
+    history = log --pretty=format:'%h from %an, %ar, \"%s\"' --graph
 
