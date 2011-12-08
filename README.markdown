@@ -29,5 +29,7 @@ It's as simple as running:
 
 From this top-level directory.
 
+new files like the `_zshrc` may need to be symlinked manually
+
 ## Requirements
 * bash
