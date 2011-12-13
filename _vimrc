@@ -328,3 +328,7 @@ highlight ColorColumn ctermbg=DarkBlue
 " tryna fix the nonindentation of python comments
 " http://stackoverflow.com/questions/2360249/vim-automatically-removes-indentation-on-python-comments/2360284#2360284
 inoremap # X#
+
+" improving pasting from the clipboard via xsel
+" http://vim.wikia.com/wiki/Accessing_the_system_clipboard
+map <leader>pp :r!xsel -p<CR>
