@@ -324,3 +324,7 @@ endif
 
 set colorcolumn=79
 highlight ColorColumn ctermbg=DarkBlue
+
+" tryna fix the nonindentation of python comments
+" http://stackoverflow.com/questions/2360249/vim-automatically-removes-indentation-on-python-comments/2360284#2360284
+inoremap # X#
