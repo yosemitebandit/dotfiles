@@ -35,23 +35,44 @@ export MEDUELE_SETTINGS=/Users/redwoodsystems/conf/meduele_settings.py
 export SARVAJAL_SETTINGS=/home/matt/conf/sarvajal/sarvajal_settings.py
 
 #{ ALIASES
-alias ll='ls -la'
-alias l='ls -lh'
-alias gs='git status'
-alias gh='git history'
-alias ga='git add'
-alias gb='git branch'
-alias gd='git diff'
+    alias ll='ls -la'
+    alias l='ls -lh'
 
-#{ Clementine music player 
-# http://code.google.com/p/clementine-player/wiki/MPRIS
-alias play='qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.Play'
-alias pause='qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.Pause'
-alias next='qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.Next'
-alias prev='qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.Prev'
-alias stop='qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.Stop'
-alias current='qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.GetMetadata'
+    #{ git
+        alias gs='git status'
+        alias gh='git history'
+        alias ga='git add'
+        alias gb='git branch'
+        alias gd='git diff'
+    #}
 
+    #{ Clementine music player 
+    # http://code.google.com/p/clementine-player/wiki/MPRIS
+    #alias play='qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.Play'
+    #alias pause='qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.Pause'
+    #alias next='qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.Next'
+    #alias prev='qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.Prev'
+    #alias stop='qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.Stop'
+    #alias current='qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.GetMetadata'
+
+    #}
+
+    #{ Banshee music player
+        alias play='banshee --play'
+        alias pause='banshee --pause'
+        alias next='banshee --next'
+        alias skip='banshee --next'
+        alias previous='banshee --previous'
+        alias louder='banshee --set-volume=+10'
+        alias softer='banshee --set-volume=-10'
+        alias fave='banshee --set-rating=5'
+        alias boo='banshee --set-rating=1'
+
+    #}
+
+    #{ erik causing problems
+        alias epy='/home/matt/conf/virtualenvs/erik/bin/python'
+    #}
 #}
 
-#}
+
