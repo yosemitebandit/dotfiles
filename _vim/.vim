@@ -1,1 +1,1 @@
-/home/sontek/code/dotfiles/_vim
+/home/matt/conf/hideo/dotfiles/_vim

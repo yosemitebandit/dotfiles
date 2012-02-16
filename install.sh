@@ -31,4 +31,4 @@ git submodule foreach git submodule update
 
 # setup command-t
 cd _vim/bundle/command-t
-rake make
+rvm rake make

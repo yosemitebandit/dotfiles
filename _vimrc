@@ -332,3 +332,9 @@ inoremap # X#
 " improving pasting from the clipboard via xsel
 " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
 map <leader>pp :r!xsel -p<CR>
+
+" an end to autocompleting -- failed..
+autocmd FileType * :AcpDisable
+
+
+
