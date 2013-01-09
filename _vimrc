@@ -359,3 +359,11 @@ nnoremap ;w :w<CR>
 nnoremap ;q :q
 nnoremap ;wq :wq
 
+" go syntax
+au BufRead,BufNewFile *.go set filetype=go
+
+
+" copy and paste to and from the clipboard
+nnoremap y "+y
+vnoremap y "+y
+:set clipboard=unnamed
