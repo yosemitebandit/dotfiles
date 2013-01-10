@@ -363,7 +363,14 @@ nnoremap ;wq :wq
 au BufRead,BufNewFile *.go set filetype=go
 
 
-" copy and paste to and from the clipboard
-nnoremap y "+y
-vnoremap y "+y
-:set clipboard=unnamed
+" copy and paste to and from the clipboard with gvim
+" the three lines below don't play well with 'yy'
+"nnoremap y "+y
+"vnoremap y "+y
+":set clipboard=unnamed
+"
+" a better solution from http://superuser.com/a/189198/27119
+vmap <C-c> "+y1
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <C-r><C-o>+
