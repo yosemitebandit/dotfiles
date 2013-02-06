@@ -154,6 +154,8 @@ set wildmode=full             " <Tab> cycles between all matching choices.
 set noerrorbells
 set vb t_vb=
 set novisualbell
+set t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 " Ignore these files when completing
 set wildignore+=*.o,*.obj,.git,*.pyc
@@ -330,7 +332,7 @@ inoremap # X#
 map <leader>pp :r!xsel -p<CR>
 
 " an end to autocompleting -- failed..
-autocmd FileType * :AcpDisable
+" autocmd FileType * :AcpDisable
 
 " use Adobe's Source Code Pro
 if has('gui_running')
