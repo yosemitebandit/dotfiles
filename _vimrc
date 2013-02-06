@@ -5,7 +5,6 @@
 " Pep8 - http://pypi.python.org/pypi/pep8
 " Pyflakes
 " Ack
-" Rake & Ruby for command-t
 " nose, django-nose
 
 " ==========================================================
@@ -124,20 +123,12 @@ map <leader>n :NERDTreeToggle<CR>
 " switching back to the nerdtree window                                        
 nnoremap <Leader>w <C-w>w                                                      
 
-" Run command-t file search
-map <leader>f :CommandT<CR>
-
 " Ack searching
 nmap <leader>a <Esc>:Ack!
 
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
 
-" Jump to the definition of whatever the cursor is on
-map <leader>j :RopeGotoDefinition<CR>
-
-" Rename whatever the cursor is on (including references to it)
-map <leader>r :RopeRename<CR>
 " ==========================================================
 " Pathogen - Allows us to organize our vim plugins
 " ==========================================================
@@ -162,6 +153,7 @@ set wildmode=full             " <Tab> cycles between all matching choices.
 " don't bell or blink
 set noerrorbells
 set vb t_vb=
+set novisualbell
 
 " Ignore these files when completing
 set wildignore+=*.o,*.obj,.git,*.pyc
@@ -202,7 +194,7 @@ set softtabstop=4           " <BS> over an autoindent deletes both spaces.
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
 set shiftround              " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:>         " show matching <> (html mainly) as well
-set foldmethod=indent       " allow us to fold on indents
+set foldmethod=marker       " allow us to fold on marks
 set foldlevel=99            " don't fold by default
 set iskeyword-=_            " don't skip over underscores on navigation
 
@@ -246,7 +238,10 @@ set incsearch               " Incrementally search while typing a /regex
 
 """" Display
 if has("gui_running")
-    colorscheme desert
+    syntax enable
+    set background=dark
+    colorscheme solarized
+    "colorscheme desert
     " Remove menu bar
     set guioptions-=m
 
@@ -254,6 +249,7 @@ if has("gui_running")
     set guioptions-=T
 else
     colorscheme vividchalk
+
 endif
 
 " Paste from clipboard
@@ -332,3 +328,49 @@ inoremap # X#
 " improving pasting from the clipboard via xsel
 " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
 map <leader>pp :r!xsel -p<CR>
+
+" an end to autocompleting -- failed..
+autocmd FileType * :AcpDisable
+
+" use Adobe's Source Code Pro
+if has('gui_running')
+    set guifont=Source\ Code\ Pro\ 10
+endif
+
+" arduino syntax and shortcuts
+au BufRead,BufNewFile *.pde set filetype=arduino
+au BufRead,BufNewFile *.ino set filetype=arduino
+
+" inside surroundings
+map <leader>ci :ChangeInsideSurrounding<CR>
+map <leader>cas :ChangeAroundSurrounding<CR>
+
+" folding
+nnoremap <space> za
+vnoremap <space> zf
+
+" command-t
+map F :CommandT<CR>
+let g:CommandTMaxHeight=12
+nnoremap <F5> :CommandTFlush<CR>
+
+" shortcut
+nnoremap ;w :w<CR>
+nnoremap ;q :q
+nnoremap ;wq :wq
+
+" go syntax
+au BufRead,BufNewFile *.go set filetype=go
+
+
+" copy and paste to and from the clipboard with gvim
+" the three lines below don't play well with 'yy'
+"nnoremap y "+y
+"vnoremap y "+y
+":set clipboard=unnamed
+"
+" a better solution from http://superuser.com/a/189198/27119
+vmap <C-c> "+y1
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <C-r><C-o>+

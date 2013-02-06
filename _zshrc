@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=/home/matt/conf/capek/oh-my-zsh
+ZSH=/home/matt/conf/hideo/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -26,24 +26,30 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git, brew, pip, osx)
 
+DISABLE_AUTO_UPDATE="true"
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin
 
-export MEDUELE_SETTINGS=/Users/redwoodsystems/conf/meduele_settings.py
-export SARVAJAL_SETTINGS=/home/matt/conf/sarvajal/sarvajal_settings.py
-
 #{ ALIASES
     alias ll='ls -la'
+    alias la='ls -la'
     alias l='ls -lh'
+    
+    alias open='xdg-open'
+
+    alias c='clear'
+    alias cl='clear'
+
+    alias te='tree'
 
     #{ git
-        alias gs='git status'
+        alias gs='git status --ignore-submodules=dirty'
         alias gh='git history'
         alias ga='git add'
         alias gb='git branch'
-        alias gd='git diff'
+        alias gd='git diff --ignore-submodules=dirty'
         alias gcm='git commit -m'
     #}
 
@@ -70,18 +76,27 @@ export SARVAJAL_SETTINGS=/home/matt/conf/sarvajal/sarvajal_settings.py
         alias boo='banshee --set-rating=1 && banshee --next'
 
     #}
-
-    #{ erik causing problems
-        alias epy='/home/matt/conf/virtualenvs/erik/bin/python'
+    
+    #{ hawthorne - flask skeleton
+        export HAWTHORNE_SETTINGS=/home/matt/conf/hawthorne/settings.py
     #}
     
-    #{ ivrhub
-        export IVRHUB_SETTINGS='/home/matt/conf/ivrhub/settings.py'
+    #{ lejos - uploading excel files to manage data and make graphs
+        export PIPELINE_SETTINGS=/home/matt/conf/lejos/settings.py
+    #}
+    
+    #{ ivrhub - making ivr more straightforward
+        export IVRHUB_SETTINGS=/home/matt/conf/ivrhub/settings.py
+    #}
+    
+    #{ cranklog - remembering rides and such
+        export CRANKLOG_SETTINGS=/home/matt/conf/cranklog/settings.py
     #}
 
-    #{ pipeline
-        export PIPELINE_SETTINGS='/home/matt/conf/pipeline/settings.py'
-    #}
+    export SAWYER_SETTINGS=/home/matt/conf/sawyer/settings.py
+    export SAWYER_SETTINGS_TEST=/home/matt/conf/sawyer/test_settings.py
+    export SAWYER_MODE=prod
+
 #}
 
-
+[[ -s "/home/matt/.rvm/scripts/rvm" ]] && source "/home/matt/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
