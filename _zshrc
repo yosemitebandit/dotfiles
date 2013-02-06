@@ -44,6 +44,7 @@ export SARVAJAL_SETTINGS=/home/matt/conf/sarvajal/sarvajal_settings.py
         alias ga='git add'
         alias gb='git branch'
         alias gd='git diff'
+        alias gcm='git commit -m'
     #}
 
     #{ Clementine music player 
@@ -66,12 +67,20 @@ export SARVAJAL_SETTINGS=/home/matt/conf/sarvajal/sarvajal_settings.py
         alias louder='banshee --set-volume=+10'
         alias softer='banshee --set-volume=-10'
         alias fave='banshee --set-rating=5'
-        alias boo='banshee --set-rating=1'
+        alias boo='banshee --set-rating=1 && banshee --next'
 
     #}
 
     #{ erik causing problems
         alias epy='/home/matt/conf/virtualenvs/erik/bin/python'
+    #}
+    
+    #{ ivrhub
+        export IVRHUB_SETTINGS='/home/matt/conf/ivrhub/settings.py'
+    #}
+
+    #{ pipeline
+        export PIPELINE_SETTINGS='/home/matt/conf/pipeline/settings.py'
     #}
 #}
 
